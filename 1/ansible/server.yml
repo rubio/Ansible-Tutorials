@@ -2,5 +2,7 @@
 # run locally here, yadda yadda yadda
 - hosts: local
   connection: local
+  become: yes
+  become_user: root
   roles:
     - nginx
