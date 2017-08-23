@@ -1,13 +1,14 @@
-server {
+/* server {
     # Enforce the use of HTTPS
     listen 80 default_server;
     server_name {{ domain }};
     return 301 https://$server_name$request_uri;
-}
+} */
 
 
 server {
-    listen 443 ssl default_server;
+    // listen 443 ssl default_server;
+    listen 80 default_server;
 
 
     root /var/www/{{ domain }}/public;
@@ -27,9 +28,9 @@ server {
     include h5bp/basic.conf;
 
 
-    ssl_certificate            {{ ssl_crt }};
-    ssl_certificate_key        {{ ssl_key }};
-    include h5bp/directive-only/ssl.conf;
+    // ssl_certificate            {{ ssl_crt }};
+    // ssl_certificate_key        {{ ssl_key }};
+    // include h5bp/directive-only/ssl.conf;
 
 
     location / {
