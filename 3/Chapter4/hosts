@@ -1,0 +1,26 @@
+[devel]
+local-appdealer-dev
+
+#[production]
+#polaris
+
+[devel:vars]
+ansible_host="127.0.0.1"
+ansible_user="vagrant"
+ansible_port=2222
+ansible_ssh_private_key_file=~/Proyectos-SSD/Ansible-Tutorials/3/Chapter4/.vagrant/machines/default/virtualbox/private_key
+ansible_ssh_common_args="-o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o PasswordAuthentication=no -o IdentitiesOnly=yes -o LogLevel=FATAL"
+
+
+#Host local-appdealer-dev
+#  HostName 127.0.0.1
+#  User vagrant
+#  Port 2222
+#  UserKnownHostsFile /dev/null
+##  StrictHostKeyChecking no
+#  PasswordAuthentication no
+#  IdentityFile "/home/francisco/Proyectos-SSD/appdealer/.vagrant/machines/default/virtualbox/private_key"
+#  IdentitiesOnly yes
+#  LogLevel FATAL
+
+

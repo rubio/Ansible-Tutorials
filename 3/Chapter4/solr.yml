@@ -1,0 +1,8 @@
+---
+- hosts: all
+  become: yes
+
+  roles:
+      - geerlingguy.java
+      - geerlingguy.tomcat6
+      - geerlingguy.solr
