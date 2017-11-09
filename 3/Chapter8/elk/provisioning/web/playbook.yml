@@ -1,0 +1,23 @@
+- hosts: webs
+  gather_facts: yes
+
+  vars_files:
+    - vars/main.yml
+
+  pre_tasks:
+    - name: Update apt cache if needed.
+      apt: update_cache=yes cache_valid_time=86400
+
+  roles:
+    - geerlingguy.nginx
+    - geerlingguy.logstash-fowarder
+
+  tasks:
+    - name: Set up virtual host fro testing.
+      copy:
+        src: files/example.conf
+        dest: /etc/nginx/conf.d/example.conf
+        owner: root
+        group: root
+        mode: 0644
+      notify: restart nginx
